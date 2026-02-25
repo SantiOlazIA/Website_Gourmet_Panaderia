@@ -14,7 +14,7 @@ export const Hero = () => {
                     <h1 className="text-5xl md:text-7xl font-sans font-bold text-dark leading-tight tracking-tight mb-4">
                         El sabor de lo nuestro.
                     </h1>
-                    <p className="font-serif text-xl md:text-2xl text-dark/80 italic mb-8 max-w-lg">
+                    <p className="font-serif text-xl md:text-2xl text-dark/80 italic mb-4 max-w-lg">
                         Bizcochuelos caseros, artesanales, de calidad, hechos con amor.
                     </p>
                     <a
