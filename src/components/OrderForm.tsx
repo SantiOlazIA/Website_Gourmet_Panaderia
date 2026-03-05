@@ -24,7 +24,7 @@ export const OrderForm = () => {
         }
 
         // WhatsApp Formatting Logic (Zero-Leakage & Structured Routing)
-        const phoneNumber = "5492641234567"; // Replace with actual 264X-XXXXXX number
+        const phoneNumber = "5492644626824"; // Updated with actual number
         const text = `¡Hola El Gourmet Panadería! 👋%0A%0AMi nombre es *${formData.name}* y quiero hacerles un encargo:%0A%0A📦 *Productos seleccionados:*%0A${selectedProductsList}%0A%0A📅 *Fecha de Retiro:* ${formData.date}%0A📝 *Notas:* ${formData.notes || 'Ninguna'}%0A%0A¿Me confirman disponibilidad? ¡Gracias!`;
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;

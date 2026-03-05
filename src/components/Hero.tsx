@@ -37,8 +37,8 @@ export const Hero = () => {
                     className="w-full h-full"
                 >
                     <img
-                        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop"
-                        alt="Artisanal Bakery Breads"
+                        src="/images/hero/hero.jpg"
+                        alt="Panadería artesanal El Gourmet"
                         className="w-full h-full object-cover object-center rounded-l-3xl shadow-2xl"
                     />
                 </motion.div>
