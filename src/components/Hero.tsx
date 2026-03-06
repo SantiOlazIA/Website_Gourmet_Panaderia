@@ -4,17 +4,17 @@ export const Hero = () => {
     return (
         <section className="relative w-full min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 overflow-hidden bg-background">
             {/* Left side text content */}
-            <div className="z-10 flex flex-col items-start justify-center w-full md:w-1/2 pt-20 md:pt-0 md:pr-16 lg:pr-24">
+            <div className="z-10 flex flex-col items-start justify-start w-full md:w-1/2 pt-24 md:pt-32 md:pr-16 lg:pr-24">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <img src="/logo-transparent.png" alt="El Gourmet Panadería" className="h-48 md:h-72 mb-8 object-contain" />
-                    <h1 className="text-5xl md:text-7xl font-serif italic text-dark leading-tight tracking-tight mb-4">
+                    <img src="/logo-transparent.png" alt="El Gourmet Panadería" className="h-40 md:h-56 mb-6 object-contain" />
+                    <h1 className="text-5xl md:text-7xl font-serif italic text-dark leading-tight tracking-tight mb-6">
                         Somos tu momento dulce en el día
                     </h1>
-                    <p className="font-serif text-xl md:text-2xl text-dark/80 italic mb-4 max-w-lg">
+                    <p className="font-serif text-xl md:text-2xl text-dark/80 italic mb-6 max-w-lg">
                         El sabor rústico y auténtico de nuestros productos caseros, hechos con 100% manteca y mucha dedicación.
                     </p>
                     <a
