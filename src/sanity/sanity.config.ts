@@ -13,6 +13,11 @@ export default defineConfig({
     // Esto asegura que cargue desde la ruta /admin
     basePath: '/admin',
 
+    // Forzar que el único método de login sea con Usuario y Contraseña (Proveedor: 'sanity')
+    auth: {
+        providers: (prev) => prev.filter((provider) => provider.name === 'sanity'),
+    },
+
     // Plugins básicos para el panel
     plugins: [deskTool()],
 
