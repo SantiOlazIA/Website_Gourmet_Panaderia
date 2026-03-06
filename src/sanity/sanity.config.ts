@@ -7,7 +7,7 @@ export default defineConfig({
     title: 'Panel de Administración - El Gourmet',
 
     // IMPORTANTE: Estos datos los sacás cuando creás tu cuenta en Sanity.io
-    projectId: 'tu_project_id_aqui',
+    projectId: 'kuqzj6h2',
     dataset: 'production',
 
     // Esto asegura que cargue desde la ruta /admin
