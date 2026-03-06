@@ -14,6 +14,11 @@ export const productSchema = {
             type: 'number',
         },
         {
+            name: 'desc',
+            title: 'Descripción',
+            type: 'text',
+        },
+        {
             name: 'image',
             title: 'Foto del Producto',
             type: 'image',
