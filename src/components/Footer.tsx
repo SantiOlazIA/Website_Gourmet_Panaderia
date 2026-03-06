@@ -12,7 +12,7 @@ export const Footer = () => {
                         El sabor rústico y auténtico de nuestros bizcochuelos caseros.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent border border-gray-100 hover:bg-accent hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md">
+                        <a href="https://www.instagram.com/panaderia_elgourmet?igsh=MWE5aGxmbDZ2dmQwMA==" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent border border-gray-100 hover:bg-accent hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md">
                             <Instagram size={24} />
                         </a>
                         <a href="#" className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-accent border border-gray-100 hover:bg-accent hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md">
@@ -29,10 +29,9 @@ export const Footer = () => {
                             <div className="p-3 bg-white rounded-xl shadow-sm text-primary border border-gray-100">
                                 <MapPin size={24} />
                             </div>
-                            <p className="text-dark/70 font-medium leading-relaxed mt-1">
-                                Plaza Cruce Sanmartiniano.<br />
-                                Martín Güemes Sur 1450,<br />
-                                (Frente al Basualdo), San Juan.
+                            <p className="text-dark/70 font-medium leading-relaxed mt-1 text-sm">
+                                <strong className="text-dark">Mañana:</strong> Inmediaciones de Calle N°9 y Manuel Lemos, Depto. Pocito.<br /><br />
+                                <strong className="text-dark">Tarde:</strong> Barrio Los Molinos (Bloque C 7), Corrientes entre Jacaranda y Las Flores, Depto. Capital.
                             </p>
                         </div>
                     </div>
@@ -43,12 +42,12 @@ export const Footer = () => {
                             <div className="p-3 bg-white rounded-xl shadow-sm text-primary border border-gray-100">
                                 <Clock size={24} />
                             </div>
-                            <p className="text-dark/70 font-medium leading-relaxed mt-1">
+                            <p className="text-dark/70 font-medium leading-relaxed mt-1 text-sm">
                                 Lunes a viernes:<br />
-                                08:00hs a 13:00hs<br />
-                                17:00hs a 21:00hs<br /><br />
+                                06:30 a 11:00 hs<br />
+                                18:00 a 20:30 hs<br /><br />
                                 Sábados:<br />
-                                09:00hs a 14:00hs
+                                18:00 a 21:00 hs
                             </p>
                         </div>
                     </div>

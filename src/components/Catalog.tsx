@@ -6,6 +6,7 @@ import { Plus, Minus } from 'lucide-react';
 
 export const Catalog = () => {
     const [products, setProducts] = useState<any[]>([]);
+    const [error, setError] = useState<string | null>(null);
     const { items, updateQuantity } = useCart();
 
     useEffect(() => {
@@ -16,7 +17,10 @@ export const Catalog = () => {
             price,
             desc,
             image
-        }`).then(res => setProducts(res)).catch(console.error);
+        }`).then(res => setProducts(res)).catch((err) => {
+            console.error(err);
+            setError(err.message || "Error de conexión");
+        });
     }, []);
 
     return (
@@ -24,7 +28,16 @@ export const Catalog = () => {
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-sans font-bold text-dark mb-16 text-center">Nuestras Especialidades</h2>
 
-                {products.length === 0 ? (
+                {error ? (
+                    <div className="text-center py-10 max-w-2xl mx-auto bg-red-50 rounded-2xl p-6 border border-red-100">
+                        <p className="text-red-500 font-bold mb-2">Error cargando los productos: {error}</p>
+                        <p className="text-sm text-gray-600">
+                            <strong>¿Estás probando desde tu celular en la misma red WiFi?</strong><br />
+                            Sanity bloquea por seguridad las conexiones desde IPs locales (ej. 192.168.x.x) a menos que las autorices.<br />
+                            Entrá a <a href="https://manage.sanity.io" target="_blank" rel="noreferrer" className="text-primary underline">manage.sanity.io</a>, seleccioná tu proyecto, andá a <strong>API</strong> {'>'} <strong>CORS Origins</strong> y agregá la IP completa que aparece arriba en el navegador de tu celular (ej. <code>http://192.168.0.X:5173</code>) marcando "Allow credentials".
+                        </p>
+                    </div>
+                ) : products.length === 0 ? (
                     <div className="text-center text-gray-500 py-10 animate-pulse">
                         Cargando catálogo en vivo desde Sanity CMS...
                     </div>

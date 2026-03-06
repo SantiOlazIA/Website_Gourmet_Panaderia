@@ -7,16 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#FAFAFA', // Off-white clean background 
+        background: '#FFFDF8', // Off-white cream background for rustic feel
         primary: {
           DEFAULT: '#FFE600', // Bright Buttery Yellow
           hover: '#E5CF00',
         },
         accent: {
-          DEFAULT: '#FF6B81', // Coral/Bubblegum Pink
+          DEFAULT: '#FF6B81', // Pink
           light: '#FF8A9B',
         },
-        dark: '#111111', // Solid almost-black for contrast text
+        dark: '#2A2626', // Softer black/brown for better rustic contrast
       },
       fontFamily: {
         // Enforcing a premium typography approach (Sans-serif stack)

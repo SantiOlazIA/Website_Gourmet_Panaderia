@@ -7,6 +7,7 @@ export const OrderForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         date: '',
+        deliveryType: 'retiro', // Default to pickup
         notes: ''
     });
 
@@ -25,7 +26,8 @@ export const OrderForm = () => {
         // WhatsApp Formatting Logic (Zero-Leakage & Structured Routing)
         const phoneNumber = "5492644626824";
         const totalString = `$${totalAmount.toLocaleString('es-AR')}`;
-        const text = `¡Hola El Gourmet Panadería! 👋%0A%0AMi nombre es *${formData.name}* y quiero confirmar este encargo:%0A%0A📦 *Productos seleccionados:*%0A${selectedProductsList}%0A%0A💰 *Total a pagar:* ${totalString}%0A%0A📅 *Fecha de Retiro:* ${formData.date}%0A📝 *Notas:* ${formData.notes || 'Ninguna'}%0A%0A¿Me confirman disponibilidad y métodos de pago? ¡Gracias!`;
+        const deliveryString = formData.deliveryType === 'envio' ? '🛵 Envío a domicilio' : '🏪 Retiro por sucursal';
+        const text = `¡Hola El Gourmet Panadería! 👋%0A%0AMi nombre es *${formData.name}* y quiero confirmar este encargo:%0A%0A📦 *Productos seleccionados:*%0A${selectedProductsList}%0A%0A💰 *Total a pagar:* ${totalString}%0A%0A📅 *Fecha:* ${formData.date}%0A📍 *Modo de Entrega:* ${deliveryString}%0A📝 *Notas:* ${formData.notes || 'Ninguna'}%0A%0A¿Me confirman disponibilidad y métodos de pago? ¡Gracias!`;
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
         window.open(whatsappUrl, '_blank');
@@ -92,9 +94,26 @@ export const OrderForm = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-dark mb-2">Fecha Estimada de Retiro</label>
+                            <label className="block text-sm font-semibold text-dark mb-2">Fecha Estimada</label>
                             <input required type="date" onChange={(e) => setFormData({ ...formData, date: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary outline-none text-gray-600" />
-                            <p className="text-xs text-gray-500 mt-2">Retiros por: Plaza Cruce Sanmartiniano (Martín Güemes Sur 1450, San Juan).</p>
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold text-dark mb-2">Modo de Entrega</label>
+                            <div className="flex gap-4">
+                                <label className="flex-1 cursor-pointer">
+                                    <input type="radio" name="delivery" value="retiro" checked={formData.deliveryType === 'retiro'} onChange={() => setFormData({ ...formData, deliveryType: 'retiro' })} className="peer hidden" />
+                                    <div className="p-4 rounded-xl border-2 border-gray-100 peer-checked:border-primary peer-checked:bg-primary/5 text-center transition-all bg-white hover:border-gray-200">
+                                        <span className="font-bold text-dark text-sm block">🏪 Retiro</span>
+                                    </div>
+                                </label>
+                                <label className="flex-1 cursor-pointer">
+                                    <input type="radio" name="delivery" value="envio" checked={formData.deliveryType === 'envio'} onChange={() => setFormData({ ...formData, deliveryType: 'envio' })} className="peer hidden" />
+                                    <div className="p-4 rounded-xl border-2 border-gray-100 peer-checked:border-primary peer-checked:bg-primary/5 text-center transition-all bg-white hover:border-gray-200">
+                                        <span className="font-bold text-dark text-sm block">🛵 Envío a domicilio</span>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
 
                         <div>
