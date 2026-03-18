@@ -57,7 +57,7 @@ export const Footer = () => {
 
             <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-dark/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-dark/50 text-sm font-medium">© {new Date().getFullYear()} El Gourmet Panadería. Todos los derechos reservados.</p>
-                <p className="text-dark/50 text-sm font-medium">Sitio Web por <span className="font-bold text-accent">Su Agencia</span></p>
+                <p className="text-dark/50 text-sm font-medium">Sitio Web por <a href="https://aureadigital.online" target="_blank" rel="noopener noreferrer" className="font-bold text-accent hover:underline">Aurea</a></p>
             </div>
         </footer>
     );
